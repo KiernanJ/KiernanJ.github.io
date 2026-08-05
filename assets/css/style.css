@@ -353,7 +353,7 @@ main {
 .contact-list li:last-child { border-bottom: 0; }
 
 .contact-label {
-	flex: 0 0 120px;
+	flex: 0 0 150px;
 	font-size: 0.8rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
@@ -379,6 +379,22 @@ main {
 	border-color: var(--accent-dark);
 	color: #ffffff;
 	text-decoration: none;
+}
+
+/* Muted note sitting beside a button — e.g. the CV's "Updated <month year>". */
+.btn-note {
+	font-size: 0.825rem;
+	color: var(--text-faint);
+	margin-left: 4px;
+	white-space: nowrap;
+}
+
+.cv-download {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 4px 6px;
+	margin-bottom: 2rem;
 }
 
 .btn-secondary {
