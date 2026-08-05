@@ -1,0 +1,444 @@
+/* ------------------------------------------------------------------
+   Kiernan Jennings — personal site
+   Hand-authored CSS. No preprocessor, no build step.
+   ------------------------------------------------------------------ */
+
+:root {
+	--accent:        #1da0c3;
+	--accent-dark:   #167993;
+	--text:          #222222;
+	--text-muted:    #6b6b6b;
+	--text-faint:    #909090;
+	--rule:          #e3e3e3;
+	--rule-strong:   #cfcfcf;
+	--bg:            #ffffff;
+	--bg-alt:        #f6f6f6;
+	--maxw:          860px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font: 15px/1.65 "Helvetica Neue", Helvetica, Arial, "Segoe UI", sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+	color: var(--accent-dark);
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+	margin: 0 0 0.6em;
+	font-weight: 700;
+	line-height: 1.3;
+	color: var(--text);
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.15rem; }
+h3 { font-size: 1rem; }
+
+p { margin: 0 0 1em; }
+
+ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
+li { margin-bottom: 0.25em; }
+
+hr {
+	border: 0;
+	border-top: 1px solid var(--rule);
+	margin: 2.5rem 0;
+}
+
+code {
+	font-family: "SF Mono", Menlo, Consolas, monospace;
+	font-size: 0.9em;
+	background: var(--bg-alt);
+	padding: 0.1em 0.35em;
+	border-radius: 2px;
+}
+
+/* --- Layout ------------------------------------------------------- */
+
+.wrap {
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+main {
+	padding: 40px 0 64px;
+}
+
+/* --- Site header / navigation ------------------------------------- */
+
+.site-header {
+	border-bottom: 1px solid var(--rule);
+	background: var(--bg);
+}
+
+.site-header .wrap {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px 24px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.site-title {
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	color: var(--text);
+	white-space: nowrap;
+}
+
+.site-title:hover {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.site-nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 22px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-nav li { margin: 0; }
+
+.site-nav a {
+	font-size: 0.875rem;
+	color: var(--text-muted);
+	padding-bottom: 2px;
+	border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.site-nav a[aria-current="page"] {
+	color: var(--text);
+	font-weight: 600;
+	border-bottom-color: var(--accent);
+}
+
+/* --- Page intro --------------------------------------------------- */
+
+.page-head {
+	margin-bottom: 2rem;
+	padding-bottom: 1.25rem;
+	border-bottom: 1px solid var(--rule);
+}
+
+.page-head h1 { margin-bottom: 0.35em; }
+
+.page-head .lede {
+	margin: 0;
+	color: var(--text-muted);
+	font-size: 1rem;
+}
+
+/* --- Home intro block --------------------------------------------- */
+
+.intro {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+	align-items: flex-start;
+	margin-bottom: 2.5rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid var(--rule);
+}
+
+.intro-body { flex: 1 1 420px; min-width: 0; }
+
+.intro-body h1 {
+	font-size: 1.9rem;
+	margin-bottom: 0.2em;
+}
+
+.intro-role {
+	margin: 0 0 1.25em;
+	color: var(--text-muted);
+	font-size: 0.95rem;
+}
+
+.intro-portrait {
+	flex: 0 0 168px;
+	width: 168px;
+	height: 168px;
+	object-fit: cover;
+	border: 1px solid var(--rule);
+	background: var(--bg-alt);
+}
+
+/* --- Section blocks ----------------------------------------------- */
+
+.section { margin-bottom: 2.75rem; }
+
+.section > h2 {
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.09em;
+	color: var(--text-faint);
+	padding-bottom: 0.5rem;
+	margin-bottom: 1.1rem;
+	border-bottom: 1px solid var(--rule);
+}
+
+/* --- Card grid ---------------------------------------------------- */
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 16px;
+}
+
+/* Two fixed columns — use for sets with an even number of cards, so the
+   last card never orphans on its own row. */
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+.card {
+	border: 1px solid var(--rule);
+	background: var(--bg-alt);
+	padding: 18px 20px;
+}
+
+.card h3 { margin-bottom: 0.4em; }
+
+.card p {
+	margin-bottom: 0.75em;
+	font-size: 0.925rem;
+	color: #3d3d3d;
+}
+
+.card p:last-child { margin-bottom: 0; }
+
+.card-links {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	font-size: 0.875rem;
+}
+
+.card-links li { margin: 0; }
+
+/* --- Status tag --------------------------------------------------- */
+
+/* Sits on its own line beneath the heading so tag placement stays
+   consistent regardless of how long the title is. */
+.tag {
+	display: block;
+	width: -moz-fit-content;
+	width: fit-content;
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-muted);
+	background: #ffffff;
+	border: 1px solid var(--rule-strong);
+	padding: 1px 7px;
+	margin: 7px 0 0;
+	white-space: nowrap;
+}
+
+.tag-live {
+	color: #1a7f4f;
+	border-color: #b6ddc7;
+	background: #eef8f2;
+}
+
+/* --- Definition-style listings (CV, publications, news) ----------- */
+
+.entries {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.entries > li {
+	margin: 0;
+	padding: 16px 0;
+	border-bottom: 1px solid var(--rule);
+}
+
+.entries > li:first-child { padding-top: 0; }
+.entries > li:last-child { border-bottom: 0; }
+
+.entry-meta {
+	display: block;
+	font-size: 0.8rem;
+	color: var(--text-faint);
+	margin-bottom: 0.2em;
+}
+
+.entry-title {
+	font-size: 1rem;
+	font-weight: 700;
+	margin: 0 0 0.2em;
+}
+
+.entry-sub {
+	margin: 0 0 0.4em;
+	color: var(--text-muted);
+	font-size: 0.925rem;
+}
+
+.entries p:last-child { margin-bottom: 0; }
+
+/* --- Skill columns ------------------------------------------------ */
+
+.skills {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 8px 32px;
+}
+
+.skills h3 {
+	font-size: 0.925rem;
+	margin-bottom: 0.35em;
+}
+
+.skills ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1em;
+	font-size: 0.925rem;
+	color: #3d3d3d;
+}
+
+/* --- Contact list ------------------------------------------------- */
+
+.contact-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.contact-list li {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 16px;
+	padding: 12px 0;
+	border-bottom: 1px solid var(--rule);
+}
+
+.contact-list li:last-child { border-bottom: 0; }
+
+.contact-label {
+	flex: 0 0 120px;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--text-faint);
+	padding-top: 2px;
+}
+
+/* --- Buttons ------------------------------------------------------ */
+
+.btn {
+	display: inline-block;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: #ffffff;
+	background: var(--accent);
+	border: 1px solid var(--accent);
+	padding: 7px 16px;
+	margin: 0 8px 8px 0;
+}
+
+.btn:hover {
+	background: var(--accent-dark);
+	border-color: var(--accent-dark);
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.btn-secondary {
+	color: var(--text);
+	background: #ffffff;
+	border-color: var(--rule-strong);
+}
+
+.btn-secondary:hover {
+	color: var(--accent);
+	background: var(--bg-alt);
+	border-color: var(--rule-strong);
+}
+
+/* --- Footer ------------------------------------------------------- */
+
+.site-footer {
+	border-top: 1px solid var(--rule);
+	padding: 22px 0 40px;
+	font-size: 0.825rem;
+	color: var(--text-faint);
+}
+
+.site-footer .wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 8px 24px;
+}
+
+.site-footer ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.site-footer li { margin: 0; }
+
+/* --- Small screens ------------------------------------------------ */
+
+@media screen and (max-width: 700px) {
+	.grid-2 { grid-template-columns: 1fr; }
+}
+
+@media screen and (max-width: 560px) {
+	.site-header .wrap {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.site-nav ul { gap: 8px 18px; }
+
+	.intro-portrait {
+		flex-basis: 120px;
+		width: 120px;
+		height: 120px;
+	}
+
+	.contact-label { flex-basis: 100%; }
+}
