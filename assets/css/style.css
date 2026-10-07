@@ -311,7 +311,14 @@ main {
 	font-size: 0.925rem;
 }
 
-.entries p:last-child { margin-bottom: 0; }
+.entries p:last-child,
+.entries ul:last-child { margin-bottom: 0; }
+
+.entries li ul {
+	margin-top: 0.4em;
+	font-size: 0.925rem;
+	color: #3d3d3d;
+}
 
 /* --- Skill columns ------------------------------------------------ */
 

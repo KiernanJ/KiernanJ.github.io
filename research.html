@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Research &mdash; Kiernan Jennings</title>
-	<meta name="description" content="Research on large-scale optimization, surrogate modeling, and machine learning for energy systems." />
+	<meta name="description" content="Research on large-scale optimization and decomposition algorithms for energy systems, with a focus on grid-integrated electrolysis." />
 	<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -33,16 +33,20 @@
 			<div class="page-head">
 				<h1>Research</h1>
 				<p class="lede">
-					Models and algorithms for large-scale optimization, with applications in energy systems.
+					Large-scale optimization and decomposition algorithms, with applications in energy systems.
 				</p>
 			</div>
 
 			<section class="section">
 				<h2>Overview</h2>
 				<p>
-            My research revolves around large-scale optimization arising at the intersection of 
-            energy systems and sustainable chemical production. My work derives methods for solving
-            these problems using novel decomposition schemes that integrate machine learning and AI.
+					My research develops optimization models and decomposition algorithms for energy
+					systems whose decisions span very different time scales. The central application is
+					grid-integrated electrolysis: deciding how electrolyzers should operate in electricity
+					markets hour by hour while accounting for how that operation degrades the equipment
+					over decades. Coupling these scales produces mixed-integer programs with millions of
+					binary variables, so much of my work is on decomposition methods that make them
+					solvable.
 				</p>
 			</section>
 
@@ -50,35 +54,39 @@
 				<h2>Directions</h2>
 				<div class="grid grid-2">
 					<div class="card">
-						<h3>Distributed &amp; Decomposition Methods</h3>
+						<h3>Multi-Scale Optimization for Grid-Integrated Electrolysis</h3>
 						<p>
-							Graph-based formulations and ADMM-style decomposition for problems whose
-							structure can be partitioned across subsystems, enabling parallel solution
-							of models too large for a single solve.
+							A mixed-integer linear programming framework that couples demand-response
+							operation of electrolyzers in day-ahead and real-time markets with usage-based
+							degradation and stack replacement scheduling, so short-term operating decisions
+							are priced against their long-term cost.
 						</p>
 					</div>
 					<div class="card">
-						<h3>Surrogate-Based Optimization</h3>
+						<h3>Aggregate-Informed Benders Decomposition</h3>
 						<p>
-							Learned approximations of costly subproblems and physical models, embedded
-							directly in optimization formulations, with attention to when surrogate
-							error changes the resulting decision.
+							A Benders decomposition algorithm tailored to the multi-scale structure of these
+							models. On 40-year instances with up to 5.6 million binary variables, where
+							monolithic solves run out of memory, it reduces final optimality gaps from 85% to
+							under 5%.
 						</p>
 					</div>
 					<div class="card">
-						<h3>Explainability in Optimization</h3>
+						<h3>Decomposing Surrogate-Embedded Models</h3>
 						<p>
-							Methods for interpreting and communicating why a large-scale optimization
-							model produces the solution it does &mdash; which constraints bind, which
-							inputs drive the outcome, and how robust the result is.
+							PlasmoSurrogates.jl, a Julia framework built on Plasmo.jl for decomposing
+							optimization models that combine machine learning surrogates with algebraic
+							models. Related work with collaborators on decision-focused surrogate modeling
+							for mixed-integer nonlinear programs.
 						</p>
 					</div>
 					<div class="card">
-						<h3>Energy Equity &amp; Sustainability</h3>
+						<h3>Electrochemical Systems in Electricity Markets</h3>
 						<p>
-							Formulating reliability, emissions, and distributional-equity objectives as
-							explicit terms in energy planning problems, and examining the trade-offs
-							among them.
+							Market participation of electrochemical devices beyond electrolysis, including
+							multi-market bidding and demand response for redox reservoir-based devices
+							using two-stage stochastic optimization, and carbon-aware operation of
+							grid-integrated electrolysis.
 						</p>
 					</div>
 				</div>
@@ -88,10 +96,68 @@
 				<h2>Publications</h2>
 				<ul class="entries">
 					<li>
-						<p>
-							Publications in preparation. Current and forthcoming work is listed on my
-							<a href="https://scholar.google.com/citations?user=AgGAGJ0AAAAJ&amp;hl=en">Google Scholar profile</a>.
-						</p>
+						<span class="entry-meta">Preprint &middot; 2026 &middot; Submitted to <em>Computers &amp; Chemical Engineering</em></span>
+						<h3 class="entry-title">
+							<a href="https://arxiv.org/abs/2607.09512">A Multi-Scale Optimization Framework for Grid-Integrated Electrolysis</a>
+						</h3>
+						<p class="entry-sub"><strong>K.X. Jennings</strong>, V.M. Zavala, and S. Avraamidou</p>
+					</li>
+					<li>
+						<span class="entry-meta">Conference paper &middot; FOCAPO-CPC 2027</span>
+						<h3 class="entry-title">
+							<a href="https://arxiv.org/abs/2607.21440">Decomposing a Multi-Scale Optimization Framework for Grid-Integrated Electrolysis using Aggregate-Informed Benders</a>
+						</h3>
+						<p class="entry-sub"><strong>K.X. Jennings</strong>, V.M. Zavala, and S. Avraamidou</p>
+					</li>
+				</ul>
+				<p>
+					A current list is also on my
+					<a href="https://scholar.google.com/citations?user=AgGAGJ0AAAAJ&amp;hl=en">Google Scholar profile</a>.
+				</p>
+			</section>
+
+			<section class="section">
+				<h2>Presentations</h2>
+				<ul class="entries">
+					<li>
+						<span class="entry-meta">Oral &middot; 2026 AIChE Annual Meeting, Minneapolis, MN</span>
+						<h3 class="entry-title">
+							<a href="https://aiche.confex.com/aiche/2026/meetingapp.cgi/Paper/736546">Decision-Focused Surrogate Modeling for Mixed-Integer Nonlinear Programs Via Neural Differentiable Optimization Layers</a>
+						</h3>
+						<p class="entry-sub">P. Brahmbhatt, <strong>K.X. Jennings</strong>, V.M. Zavala, and S. Avraamidou</p>
+					</li>
+					<li>
+						<span class="entry-meta">Poster &middot; TWCCC 2026, Madison, WI</span>
+						<h3 class="entry-title">
+							<a href="https://twccc.engr.wisc.edu/home">Multi-Scale Optimization and Decomposition Framework for Grid-Integrated Electrolysis Systems</a>
+						</h3>
+						<p class="entry-sub"><strong>K.X. Jennings</strong>, S. Avraamidou, and V.M. Zavala</p>
+					</li>
+					<li>
+						<span class="entry-meta">Poster &middot; Hougen PSE Symposium 2026, Madison, WI</span>
+						<h3 class="entry-title">Multi-Scale Optimization for Grid-Integrated Electrolysis: Demand Response Operation with Usage-Based Degradation and Stack Replacement Scheduling</h3>
+						<p class="entry-sub"><strong>K.X. Jennings</strong>, S. Avraamidou, and V.M. Zavala</p>
+					</li>
+					<li>
+						<span class="entry-meta">Oral &middot; 2025 AIChE Annual Meeting, Boston, MA</span>
+						<h3 class="entry-title">
+							<a href="https://aiche.confex.com/aiche/2025/prelim.cgi/Paper/716409">Multi-Market Bidding and Demand Response for Redox Reservoir-Based Electrochemical Devices Using Two-Stage Stochastic Optimization</a>
+						</h3>
+						<p class="entry-sub">P. Brahmbhatt, <strong>K.X. Jennings</strong>, A. McCullough, V.M. Zavala, and S. Avraamidou</p>
+					</li>
+					<li>
+						<span class="entry-meta">Poster &middot; TWCCC 2025, Madison, WI</span>
+						<h3 class="entry-title">
+							<a href="https://twccc.engr.wisc.edu/home">Multi-Scale Optimization for Capacity Planning and Operations of Electrolysis Systems</a>
+						</h3>
+						<p class="entry-sub"><strong>K.X. Jennings</strong>, S. Avraamidou, and V.M. Zavala</p>
+					</li>
+					<li>
+						<span class="entry-meta">Poster &middot; Power Grid-Informed Electrochemistry Conference 2025, Madison, WI</span>
+						<h3 class="entry-title">
+							<a href="https://sites.google.com/wisc.edu/grid-electrochemistry-2025/home">Multi-Scale Optimization for Evaluating Electrolyzer Operation Degradation in Electricity Markets</a>
+						</h3>
+						<p class="entry-sub"><strong>K.X. Jennings</strong>, S. Avraamidou, and V.M. Zavala</p>
 					</li>
 				</ul>
 			</section>

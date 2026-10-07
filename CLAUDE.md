@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Kiernan Jennings, hosted on GitHub Pages at `kiernanjennings.com`.
+Personal portfolio website for Kiernan Jennings, hosted on GitHub Pages at `kiernanj.github.io`.
 Hand-authored static HTML and CSS — no framework, no build system, no JavaScript, no backend,
 and no third-party dependencies. The design is minimal and multi-page (one page per topic),
 loosely modeled on Bandcamp's dense, functional, light-background aesthetic.
@@ -14,7 +14,8 @@ loosely modeled on Bandcamp's dense, functional, light-background aesthetic.
 **Local preview:** Open any `.html` file with VS Code Live Server (configured for port 5501),
 or run `python3 -m http.server` from the repo root. There is no build step.
 
-**Deployment:** Push to `main`. GitHub Pages deploys to `kiernanjennings.com` via the CNAME file.
+**Deployment:** Push to `main`. GitHub Pages deploys to `kiernanj.github.io`. There is no custom
+domain (the CNAME file was removed), so don't add one back.
 
 ## Architecture
 
