@@ -190,6 +190,7 @@ main {
 	width: 168px;
 	height: 168px;
 	object-fit: cover;
+	object-position: 50% 20%;
 	border: 1px solid var(--rule);
 	background: var(--bg-alt);
 }
