@@ -41,55 +41,11 @@
 				<h2>Overview</h2>
 				<p>
 					My research develops optimization models and decomposition algorithms for energy
-					systems whose decisions span very different time scales. The central application is
-					grid-integrated electrolysis: deciding how electrolyzers should operate in electricity
-					markets hour by hour while accounting for how that operation degrades the equipment
-					over decades. Coupling these scales produces mixed-integer programs with millions of
-					binary variables, so much of my work is on decomposition methods that make them
-					solvable.
+					systems where decisions span across multiple different time scales. The central application is
+					power grid integrated electrolysis and deciding how electrolyzers can provide flexibility
+						to the grid. These problems require new system models and novel mathematical techniques to
+						solve these problems.
 				</p>
-			</section>
-
-			<section class="section">
-				<h2>Directions</h2>
-				<div class="grid grid-2">
-					<div class="card">
-						<h3>Multi-Scale Optimization for Grid-Integrated Electrolysis</h3>
-						<p>
-							A mixed-integer linear programming framework that couples demand-response
-							operation of electrolyzers in day-ahead and real-time markets with usage-based
-							degradation and stack replacement scheduling, so short-term operating decisions
-							are priced against their long-term cost.
-						</p>
-					</div>
-					<div class="card">
-						<h3>Aggregate-Informed Benders Decomposition</h3>
-						<p>
-							A Benders decomposition algorithm tailored to the multi-scale structure of these
-							models. On 40-year instances with up to 5.6 million binary variables, where
-							monolithic solves run out of memory, it reduces final optimality gaps from 85% to
-							under 5%.
-						</p>
-					</div>
-					<div class="card">
-						<h3>Decomposing Surrogate-Embedded Models</h3>
-						<p>
-							PlasmoSurrogates.jl, a Julia framework built on Plasmo.jl for decomposing
-							optimization models that combine machine learning surrogates with algebraic
-							models. Related work with collaborators on decision-focused surrogate modeling
-							for mixed-integer nonlinear programs.
-						</p>
-					</div>
-					<div class="card">
-						<h3>Electrochemical Systems in Electricity Markets</h3>
-						<p>
-							Market participation of electrochemical devices beyond electrolysis, including
-							multi-market bidding and demand response for redox reservoir-based devices
-							using two-stage stochastic optimization, and carbon-aware operation of
-							grid-integrated electrolysis.
-						</p>
-					</div>
-				</div>
 			</section>
 
 			<section class="section">
