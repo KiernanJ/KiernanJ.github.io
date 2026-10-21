@@ -185,14 +185,19 @@ main {
 	font-size: 0.95rem;
 }
 
+/* Vertical oval: a white gap inside a thin gray ring, with a soft shadow
+   that fades into the page. The image file is pre-cropped to 4:5 around
+   the face, so object-fit only has to fill the frame. */
 .intro-portrait {
 	flex: 0 0 168px;
 	width: 168px;
-	height: 168px;
+	height: 210px;
 	object-fit: cover;
-	object-position: 50% 20%;
-	border: 1px solid var(--rule);
-	background: var(--bg-alt);
+	border-radius: 50%;
+	padding: 4px;
+	border: 1px solid var(--rule-strong);
+	background: var(--bg);
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
 
 /* --- Section blocks ----------------------------------------------- */
@@ -461,7 +466,7 @@ main {
 	.intro-portrait {
 		flex-basis: 120px;
 		width: 120px;
-		height: 120px;
+		height: 150px;
 	}
 
 	.contact-label { flex-basis: 100%; }
